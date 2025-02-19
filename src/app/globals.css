@@ -1,6 +1,10 @@
+@import 'flowbite/dist/flowbite.min.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 :root {
   --background: #ffffff;
@@ -17,5 +21,18 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+font {
+  font-family: 'Inter', sans-serif;
+}
+
+/* .inter-custom {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
+
