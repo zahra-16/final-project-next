@@ -145,9 +145,11 @@ export default function HomePage() {
         <p className="text-lg mb-4 text-white">
           Temukan berbagai barang untuk disewa sesuai kebutuhan Anda!
         </p>
+        <Link href="/alat">
         <button className="bg-[#A27B5C] text-black px-6 py-2 rounded-full shadow-lg hover:bg-[#543A14] hover:text-white transition-all">
           Mulai Sewa Sekarang
         </button>
+        </Link>
       </div>
 
       {/* Product Section */}
