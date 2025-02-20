@@ -147,12 +147,12 @@ export default function AdminTools() {
           ))}
         </div>
 
-        <Button
+        {/* <Button
           className="text-white bg-blue-500 hover:bg-blue-600 p-3"
           onClick={getAllTools}
         >
           Semua Alat
-        </Button>
+        </Button> */}
       </div>
       {/* sampai sini */}
 
