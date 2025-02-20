@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Card, CardBody, Button, Modal, ModalBody, ModalContent, ModalHeader, ModalFooter } from "@heroui/react";
-import { Alat, GetAlatResponse } from "@/dataservices/alat/type";
+import { Alat, AlatOne, GetAlatResponse, GetAlatResponseOne } from "@/dataservices/alat/type";
 import {
   fetchAlatById,
   editAlat, // Pastikan editAlat diimport
@@ -11,9 +11,10 @@ import {
 } from "@/dataservices/alat/api";
 import { Plus, Trash2 } from "lucide-react";
 import axios from "axios"; // Jangan lupa import axios!
+import { Params } from "next/dist/server/request/params";
 
-const DetailPage = ({ params }) => {
-  const [alat, setAlat] = useState<Alat | null>(null);
+const DetailPage = ({ params }: { params: Params }) => {
+  const [alat, setAlat] = useState<AlatOne | null>(null);
   const { id } = useParams();
   const router = useRouter();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false); // Untuk modal edit
@@ -21,21 +22,21 @@ const DetailPage = ({ params }) => {
   const [updatedAlat, setUpdatedAlat] = useState({
     alat_nama: '',
     alat_deskripsi: '',
-    alat_hargaperhari: '',
-    alat_stok: '',
-    alat_kategori_id: '',
+    alat_hargaperhari: 0,
+    alat_stok: 0,
+    alat_kategori_id: 0,
   });
 
   const getAlat = async () => {
     try {
-      const response: GetAlatResponse = await fetchAlatById(id);
+      const response: GetAlatResponseOne = await fetchAlatById(Number(id));
       setAlat(response.data);
       setUpdatedAlat({
         alat_nama: response.data.alat_nama || '',
         alat_deskripsi: response.data.alat_deskripsi || '',
-        alat_hargaperhari: response.data.alat_hargaperhari || '',
-        alat_stok: response.data.alat_stok || '',
-        alat_kategori_id: response.data.alat_kategori_id || '',
+        alat_hargaperhari: response.data.alat_hargaperhari ,
+        alat_stok: response.data.alat_stok ,
+        alat_kategori_id: response.data.alat_kategori_id ,
       });
     } catch (error) {
       console.error("Error fetching alat details:", error);
@@ -114,11 +115,11 @@ const DetailPage = ({ params }) => {
                 className="rounded-xl w-full h-full object-contain"
               />
               <div className="flex gap-2 mt-4">
-                {alat.gambar_lain &&
-                  alat.gambar_lain.map((gambar, index) => (
+                {alat.alat_gambar &&
+                  alat.alat_gambar.map((gambar, index) => (
                     <img
                       key={index}
-                      src={gambar}
+                      src={gambar.gambar.gambar}
                       alt={`Gambar ${index + 1}`}
                       className="w-16 h-16 object-cover rounded-lg border border-gray-200"
                     />

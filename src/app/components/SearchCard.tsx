@@ -1,7 +1,9 @@
 import { deleteAlat, getAlat } from "@/dataservices/alat/api";
 import { Alat } from "@/dataservices/alat/type";
 import { getPelanggan } from "@/dataservices/pelanggan/api";
+import { Pelanggan } from "@/dataservices/pelanggan/type";
 import { getPenyewaan } from "@/dataservices/penyewaan/api";
+import { Penyewaan } from "@/dataservices/penyewaan/type";
 import {
   Button,
   Input,
@@ -20,8 +22,8 @@ import React, { useState } from "react";
 
 export default function SearchCard() {
   const [tools, setTools] = useState<Alat[]>([]);
-  const [penyewaan, setPenyewa] = useState([]);
-  const [pelanggan, setPelanggan] = useState([]);
+  const [penyewaan, setPenyewa] = useState<Penyewaan[]>([]);
+  const [pelanggan, setPelanggan] = useState<Pelanggan[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [limit, setLimit] = useState(5); // Set a default limit
   const [isSearched, setIsSearched] = useState(false); // State untuk melacak apakah pencarian sudah dilakukan
@@ -57,6 +59,8 @@ export default function SearchCard() {
     }
   };
 
+  // edit
+
   const fetchPelanggan = async () => {
     try {
       const response = await getPelanggan(limit, searchTerm); // Pass limit and searchTerm to getPenyewaan function
@@ -78,7 +82,7 @@ export default function SearchCard() {
           className="mr-2"
         />
         <Button
-        name="submit"
+          name="submit"
           onClick={() => {
             fetchTools();
             fetchPenyewa();
@@ -104,7 +108,7 @@ export default function SearchCard() {
                   <a>
                     <img
                       className="rounded-t-lg object-cover"
-                      src={tool.gambar_utama}
+                      src={(tool as any).gambar_utama}
                       alt="Tool image"
                     />
                   </a>
@@ -150,9 +154,8 @@ export default function SearchCard() {
           )}
         </div>
       )}
-    <h1 className="pb-3 font-bold">Daftar Penyewaan</h1>
+      <h1 className="pb-3 font-bold">Daftar Penyewaan</h1>
       {isSearched && (
-      
         <Table aria-label="Daftar Penyewaan Alat">
           <TableHeader>
             <TableColumn>ID Pelanggan</TableColumn>
@@ -161,14 +164,12 @@ export default function SearchCard() {
             <TableColumn>Status Pembayaran</TableColumn>
             <TableColumn>Status Kembali</TableColumn>
             <TableColumn>Total Harga</TableColumn>
-            <TableColumn>Edit</TableColumn>
-            <TableColumn>Detail</TableColumn>
             <TableColumn>Delete</TableColumn>
           </TableHeader>
           <TableBody>
             {penyewaan.map((item) => (
               <TableRow key={item.penyewaan_id}>
-                <TableCell>{item.penyewaan_pelanggan_id}</TableCell>
+                <TableCell>{item.pelanggan_id}</TableCell>
                 <TableCell>{item.penyewaan_tglsewa}</TableCell>
                 <TableCell>{item.penyewaan_tglkembali}</TableCell>
                 <TableCell>
@@ -184,30 +185,9 @@ export default function SearchCard() {
                 </TableCell>
                 <TableCell>{item.penyewaan_sttskembali}</TableCell>
                 <TableCell>
-                  Rp {parseInt(item.penyewaan_totalharga).toLocaleString()}
+                  Rp {item.penyewaan_totalharga.toLocaleString()}
                 </TableCell>
-                <TableCell>
-                  <Tooltip content="Edit Data">
-                    <Button
-                      onClick={() => handleEditClick(item.penyewaan_id)}
-                      variant="light"
-                      className="bg-[#A27B5C] hover:bg-[#DCD7C9] rounded-lg"
-                    >
-                      Edit
-                    </Button>
-                  </Tooltip>
-                </TableCell>
-                <TableCell>
-                  <Tooltip content="Detail">
-                    <Button
-                      onClick={() => handleDetailClick(item.penyewaan_id)}
-                      variant="light"
-                      className="bg-[#A27B5C] hover:bg-[#DCD7C9] rounded-lg"
-                    >
-                      Detail
-                    </Button>
-                  </Tooltip>
-                </TableCell>
+                
                 <TableCell>
                   <Tooltip content="Delete Data">
                     <Button
@@ -225,7 +205,6 @@ export default function SearchCard() {
         </Table>
       )}
 
-
       <h1 className="pt-5 font-bold">Daftar Pelanggan</h1>
       <Table aria-label="Daftar Penyewaan Alat" className="pt-3">
         <TableHeader>
@@ -236,8 +215,6 @@ export default function SearchCard() {
           <TableColumn>Email</TableColumn>
           <TableColumn>Jenis Data</TableColumn>
           <TableColumn>Data File</TableColumn>
-          <TableColumn>Edit</TableColumn>
-          <TableColumn>Detail</TableColumn>
           <TableColumn>Delete</TableColumn>
         </TableHeader>
         <TableBody>
@@ -248,43 +225,18 @@ export default function SearchCard() {
               <TableCell>{pelanggan.pelanggan_alamat}</TableCell>
               <TableCell>{pelanggan.pelanggan_notelp}</TableCell>
               <TableCell>{pelanggan.pelanggan_email}</TableCell>
+              <TableCell>{pelanggan.pelanggan_data_jenis}</TableCell>
               <TableCell>
-                {pelanggan.pelanggan_data?.pelanggan_data_jenis}
-              </TableCell>
-              <TableCell>
-                {pelanggan.pelanggan_data?.pelanggan_data_file &&
-                typeof pelanggan.pelanggan_data.pelanggan_data_file ===
-                  "string" ? (
+                {pelanggan.pelanggan_data_file &&
+                typeof pelanggan.pelanggan_data_file === "string" ? (
                   <img
-                    src={pelanggan.pelanggan_data.pelanggan_data_file}
+                    src={pelanggan.pelanggan_data_file}
                     alt="File Pelanggan"
                     className="w-16 h-16 rounded-md object-cover"
                   />
                 ) : (
                   "Tidak ada file"
                 )}
-              </TableCell>
-              <TableCell>
-                <Tooltip content="Edit Data">
-                  <Button
-                    variant="light"
-                    className="bg-[#A27B5C] hover:bg-[#DCD7C9] rounded-lg"
-                    onClick={() => handleEditClick(pelanggan)}
-                  >
-                    Edit
-                  </Button>
-                </Tooltip>
-              </TableCell>
-              <TableCell>
-                <Tooltip content="Detail">
-                  <Button
-                    variant="light"
-                    className="bg-[#A27B5C] hover:bg-[#DCD7C9] rounded-lg"
-                    onClick={() => handleDetailClick(pelanggan)}
-                  >
-                    Detail
-                  </Button>
-                </Tooltip>
               </TableCell>
 
               <TableCell>

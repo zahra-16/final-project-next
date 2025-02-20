@@ -9,7 +9,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"; // Import QueryClient
-import ErrorBoundary from "./components/ErrorBoundary";
 import { Toaster } from "react-hot-toast";
 
 // Inisialisasi QueryClient
@@ -34,7 +33,6 @@ export default function RootLayout({
   const hideNavbarFooter = pathname.startsWith("/auth");
 
   return (
-    <ErrorBoundary fallback={<h1>Something went wrong.</h1>}>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -42,7 +40,6 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           <HeroUIProvider>
             <AuthProvider>
-              <Toaster />
               {!hideNavbarFooter && <Navbar />}
               <main>{children}</main>
               {!hideNavbarFooter && <Footer />}
@@ -51,9 +48,5 @@ export default function RootLayout({
         </QueryClientProvider>
       </body>
     </html>
-    </ErrorBoundary>
   );
 }
-
-
-

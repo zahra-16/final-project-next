@@ -79,7 +79,7 @@ const KategoriPage: FC = () => {
         `https://penyewaan.vercel.app/api/v1/kategori/${kategori_id}`,
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6NCwiYWRtaW5fdXNlcm5hbWUiOiJhZG1pbjYiLCJhZG1pbl9lbWFpbCI6ImFkbWluZW5hbUBnbWFpbC5jb20iLCJpYXQiOjE3Mzk4NTQwNDMsImV4cCI6MTczOTg2NDg0M30.Q7rtyrYwNMIFGVi4RGDVvLGErLduVD1Xnk3wPFUuqmCaEYRa6egWujdR2p9DvSyxLoR58au5X1n5Li__cf_ZPIGkn8KIYnoMkT00V6abnrLGTcRlaFVo3FM_O7I0q4mMmo-frs7qzZ_BBSey5pAayfRLS-lGN2Myjfo_xVxX1qPsSv8m0wjDIIdmWbyf9yczuHsU7f6XXiAFPst1VXmyoXwkqOoHa2lj6oAfSZCxuoTJiGhKF0LgCksz8cC7x610phHOHd02Tou8L4yLiPlZ4l1YQz0dlTYNhSy96p-WT2D1ZB0xwO8jw7VpOJQYu9ebfFG4k85URn2ilKBvpvoBwGdGdraFem9XTcOYll0Yd7D4VXN2b7MRRoiRJT67lrla2dVvfXPPpKZtYFQ21Ak6pv2JSgbASFYY0yfEEPmzZASe_8R8FQuqJStC4c3pGK0fLV7ce35azBQxDBAsQxmuDnZBhrY4pShbd6xEPfAoVZJOKWFAx1-lqofqI6VTCN7APY-9VsI-oQ4j1sBMZ1bTDyYUnazusSM79L3s7-gfaok92DtcwsgBebwBeWauA7rp8I2SHShAZ8ew0Pwbfi3vaaZO4yY-BbvZFeaPUSKo9nNsHSgaM7tS0W203xEsT-OUzEPcrxr2m59MTZhewAlbBc_51mL6k4-O2S7ELh2e55M`,
+            Authorization: `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6NCwiYWRtaW5fdXNlcm5hbWUiOiJhZG1pbjYiLCJhZG1pbl9lbWFpbCI6ImFkbWluZW5hbUBnbWFpbC5jb20iLCJpYXQiOjE3NDAwMTQ1OTksImV4cCI6MTc0MDAyNTM5OX0.v0jph2G_GZINPosUHpLJPin0kKfZlfuYnrOs2jPABtcR3_uoOHf0HM69sOrvDDF7UHLGVjIsij4qDQDFiNr6uibb5fJu0W3TGdFu9IIddpA65_v_jge1AMoc1QBZsIV5lOYEnGqL5l4c5ZmELoYfPUuYDG7MSMPouhXXP_bkHEIu8HI1tIBgrjTpwLTcTv5z1TasJdlkaN8urw9f6j0qM9OzYyILPQ-DvZM1eTsCmz6wGc4xx8AwXZMyI9F6Gk6Mwn4zs10uRRLhFvrB1sk5aa33sr3bHQ45kMnTJ39u0ZztgSYiesxUqkc70U16VAO8a8n4u944P88QnoI3rqt_X9lR_wy4uiPnOX_-YjXJNhFoT0ALP0WIdevu-h1wx7jIva3q2G_tb1ZnjjM8wb1YIcChumOuDSPYt7IH2hSPX5BNaH8cUMueIPAG9dTWgHfbgGJXE4KjbJIlFyK5Q-qN1j5iyqGRapwRvLXNzcjXwQaIu8j1FpqaWYNJhnH2vKSgf4Lu4-j9z3ecbiIbgLcnuBc7fOVtaoEnTiFc8EGnbMy4yz1fvSgG2RNDMVkI9jmf89VUZ-QSNQ1YllZ0z9tdhC3Lp46DsuTpi7SiTvtUNkvkrICI4zyJtwALe7HcnMiE4nyQWOr3Z1OPKo4_DBLTuDAdxjwpvvbtaNWOGCLof0Q`,
           },
         }
       );
@@ -102,14 +102,14 @@ const KategoriPage: FC = () => {
         { kategori_nama: newKategori },
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6NCwiYWRtaW5fdXNlcm5hbWUiOiJhZG1pbjYiLCJhZG1pbl9lbWFpbCI6ImFkbWluZW5hbUBnbWFpbC5jb20iLCJpYXQiOjE3Mzk4NTQwNDMsImV4cCI6MTczOTg2NDg0M30.Q7rtyrYwNMIFGVi4RGDVvLGErLduVD1Xnk3wPFUuqmCaEYRa6egWujdR2p9DvSyxLoR58au5X1n5Li__cf_ZPIGkn8KIYnoMkT00V6abnrLGTcRlaFVo3FM_O7I0q4mMmo-frs7qzZ_BBSey5pAayfRLS-lGN2Myjfo_xVxX1qPsSv8m0wjDIIdmWbyf9yczuHsU7f6XXiAFPst1VXmyoXwkqOoHa2lj6oAfSZCxuoTJiGhKF0LgCksz8cC7x610phHOHd02Tou8L4yLiPlZ4l1YQz0dlTYNhSy96p-WT2D1ZB0xwO8jw7VpOJQYu9ebfFG4k85URn2ilKBvpvoBwGdGdraFem9XTcOYll0Yd7D4VXN2b7MRRoiRJT67lrla2dVvfXPPpKZtYFQ21Ak6pv2JSgbASFYY0yfEEPmzZASe_8R8FQuqJStC4c3pGK0fLV7ce35azBQxDBAsQxmuDnZBhrY4pShbd6xEPfAoVZJOKWFAx1-lqofqI6VTCN7APY-9VsI-oQ4j1sBMZ1bTDyYUnazusSM79L3s7-gfaok92DtcwsgBebwBeWauA7rp8I2SHShAZ8ew0Pwbfi3vaaZO4yY-BbvZFeaPUSKo9nNsHSgaM7tS0W203xEsT-OUzEPcrxr2m59MTZhewAlbBc_51mL6k4-O2S7ELh2e55M`,
+            Authorization: `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6NCwiYWRtaW5fdXNlcm5hbWUiOiJhZG1pbjYiLCJhZG1pbl9lbWFpbCI6ImFkbWluZW5hbUBnbWFpbC5jb20iLCJpYXQiOjE3NDAwMTQ1OTksImV4cCI6MTc0MDAyNTM5OX0.v0jph2G_GZINPosUHpLJPin0kKfZlfuYnrOs2jPABtcR3_uoOHf0HM69sOrvDDF7UHLGVjIsij4qDQDFiNr6uibb5fJu0W3TGdFu9IIddpA65_v_jge1AMoc1QBZsIV5lOYEnGqL5l4c5ZmELoYfPUuYDG7MSMPouhXXP_bkHEIu8HI1tIBgrjTpwLTcTv5z1TasJdlkaN8urw9f6j0qM9OzYyILPQ-DvZM1eTsCmz6wGc4xx8AwXZMyI9F6Gk6Mwn4zs10uRRLhFvrB1sk5aa33sr3bHQ45kMnTJ39u0ZztgSYiesxUqkc70U16VAO8a8n4u944P88QnoI3rqt_X9lR_wy4uiPnOX_-YjXJNhFoT0ALP0WIdevu-h1wx7jIva3q2G_tb1ZnjjM8wb1YIcChumOuDSPYt7IH2hSPX5BNaH8cUMueIPAG9dTWgHfbgGJXE4KjbJIlFyK5Q-qN1j5iyqGRapwRvLXNzcjXwQaIu8j1FpqaWYNJhnH2vKSgf4Lu4-j9z3ecbiIbgLcnuBc7fOVtaoEnTiFc8EGnbMy4yz1fvSgG2RNDMVkI9jmf89VUZ-QSNQ1YllZ0z9tdhC3Lp46DsuTpi7SiTvtUNkvkrICI4zyJtwALe7HcnMiE4nyQWOr3Z1OPKo4_DBLTuDAdxjwpvvbtaNWOGCLof0Q`,
           },
         }
       );
       if (response.status !== 400) {
         setKategoriData((prevData) => [...prevData, response.data.data]);
         setNewKategori("");
-        onAddOpenChange(false); // Close the Add modal
+        onAddOpenChange; // Close the Add modal
       } else {
         setError("Gagal menambah kategori");
       }
@@ -127,7 +127,7 @@ const KategoriPage: FC = () => {
         { kategori_nama: editingKategori.kategori_nama },
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6NCwiYWRtaW5fdXNlcm5hbWUiOiJhZG1pbjYiLCJhZG1pbl9lbWFpbCI6ImFkbWluZW5hbUBnbWFpbC5jb20iLCJpYXQiOjE3Mzk4NTQwNDMsImV4cCI6MTczOTg2NDg0M30.Q7rtyrYwNMIFGVi4RGDVvLGErLduVD1Xnk3wPFUuqmCaEYRa6egWujdR2p9DvSyxLoR58au5X1n5Li__cf_ZPIGkn8KIYnoMkT00V6abnrLGTcRlaFVo3FM_O7I0q4mMmo-frs7qzZ_BBSey5pAayfRLS-lGN2Myjfo_xVxX1qPsSv8m0wjDIIdmWbyf9yczuHsU7f6XXiAFPst1VXmyoXwkqOoHa2lj6oAfSZCxuoTJiGhKF0LgCksz8cC7x610phHOHd02Tou8L4yLiPlZ4l1YQz0dlTYNhSy96p-WT2D1ZB0xwO8jw7VpOJQYu9ebfFG4k85URn2ilKBvpvoBwGdGdraFem9XTcOYll0Yd7D4VXN2b7MRRoiRJT67lrla2dVvfXPPpKZtYFQ21Ak6pv2JSgbASFYY0yfEEPmzZASe_8R8FQuqJStC4c3pGK0fLV7ce35azBQxDBAsQxmuDnZBhrY4pShbd6xEPfAoVZJOKWFAx1-lqofqI6VTCN7APY-9VsI-oQ4j1sBMZ1bTDyYUnazusSM79L3s7-gfaok92DtcwsgBebwBeWauA7rp8I2SHShAZ8ew0Pwbfi3vaaZO4yY-BbvZFeaPUSKo9nNsHSgaM7tS0W203xEsT-OUzEPcrxr2m59MTZhewAlbBc_51mL6k4-O2S7ELh2e55M`,
+            Authorization: `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6NCwiYWRtaW5fdXNlcm5hbWUiOiJhZG1pbjYiLCJhZG1pbl9lbWFpbCI6ImFkbWluZW5hbUBnbWFpbC5jb20iLCJpYXQiOjE3NDAwMTQ1OTksImV4cCI6MTc0MDAyNTM5OX0.v0jph2G_GZINPosUHpLJPin0kKfZlfuYnrOs2jPABtcR3_uoOHf0HM69sOrvDDF7UHLGVjIsij4qDQDFiNr6uibb5fJu0W3TGdFu9IIddpA65_v_jge1AMoc1QBZsIV5lOYEnGqL5l4c5ZmELoYfPUuYDG7MSMPouhXXP_bkHEIu8HI1tIBgrjTpwLTcTv5z1TasJdlkaN8urw9f6j0qM9OzYyILPQ-DvZM1eTsCmz6wGc4xx8AwXZMyI9F6Gk6Mwn4zs10uRRLhFvrB1sk5aa33sr3bHQ45kMnTJ39u0ZztgSYiesxUqkc70U16VAO8a8n4u944P88QnoI3rqt_X9lR_wy4uiPnOX_-YjXJNhFoT0ALP0WIdevu-h1wx7jIva3q2G_tb1ZnjjM8wb1YIcChumOuDSPYt7IH2hSPX5BNaH8cUMueIPAG9dTWgHfbgGJXE4KjbJIlFyK5Q-qN1j5iyqGRapwRvLXNzcjXwQaIu8j1FpqaWYNJhnH2vKSgf4Lu4-j9z3ecbiIbgLcnuBc7fOVtaoEnTiFc8EGnbMy4yz1fvSgG2RNDMVkI9jmf89VUZ-QSNQ1YllZ0z9tdhC3Lp46DsuTpi7SiTvtUNkvkrICI4zyJtwALe7HcnMiE4nyQWOr3Z1OPKo4_DBLTuDAdxjwpvvbtaNWOGCLof0Q`,
           },
         }
       );
@@ -139,7 +139,7 @@ const KategoriPage: FC = () => {
               : item
           )
         );
-        onEditOpenChange(false); // Close the Edit modal
+        onEditOpenChange; // Close the Edit modal
       } else {
         setError("Gagal mengedit kategori");
       }
@@ -160,7 +160,11 @@ const KategoriPage: FC = () => {
         Kategori Penyewaan
       </h1>
 
-      <Button name="tambah" onPress={onAddOpen} className="bg-[#2C3930]/80 text-white">
+      <Button
+        name="tambah"
+        onPress={onAddOpen}
+        className="bg-[#2C3930]/80 text-white"
+      >
         Tambah Kategori
       </Button>
       <Modal isOpen={isAddModalOpen} onOpenChange={onAddOpenChange}>
@@ -176,16 +180,16 @@ const KategoriPage: FC = () => {
               placeholder="Nama Kategori"
               className="w-full p-2 border border-gray-300 rounded"
             />
-            <Button name="submit" color="primary" onPress={handleTambahKategori}>
+            <Button
+              name="submit"
+              color="primary"
+              onPress={() => handleTambahKategori()}
+            >
               Tambah
             </Button>
           </ModalBody>
           <ModalFooter>
-            <Button
-              color="danger"
-              variant="light"
-              onPress={() => onAddOpenChange(false)}
-            >
+            <Button color="danger" variant="light" onPress={onAddOpenChange}>
               Close
             </Button>
           </ModalFooter>
@@ -248,8 +252,7 @@ const KategoriPage: FC = () => {
             <Button
               color="danger"
               variant="light"
-              onPress={() => onEditOpenChange(false)}
-            >
+              onPress={onEditOpenChange}>
               Close
             </Button>
           </ModalFooter>

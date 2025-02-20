@@ -32,7 +32,7 @@ export default function AdminTools() {
   const [hargaPerHari, setHargaPerHari] = useState("");
   const [stok, setStok] = useState("");
   const [kategoriId, setKategoriId] = useState("");
-  const [kategori, setKategori] = useState();
+  const [kategori, setKategori] = useState<any[]>([]);
   const [gambarUtama, setGambarUtama] = useState("");
   const router = useRouter();
 
@@ -105,9 +105,10 @@ export default function AdminTools() {
     const newAlat = {
       alat_nama: alatNama,
       deskripsi,
-      hargaPerHari,
-      stok,
-      kategoriId,
+      hargaPerHari: Number(hargaPerHari), // <--- convert to number
+      stok: Number(stok), // <--- also convert stok to number
+      kategoriId: Number(kategoriId), // <--- also convert kategoriId to number
+      
     };
 
     try {
@@ -136,7 +137,7 @@ export default function AdminTools() {
         <div className="flex justify-center gap-4 mb-4 pt-5 font">
           {kategori?.map((kategori, index) => (
             <Button
-            id="alat"
+              id="alat"
               key={index}
               className="text-white bg-[#A27B5C] hover:bg-[#DCD7C9] hover:text-[#2C3930] hover:border-2 hover:border-[#2C3930]"
               onClick={() => getToolsByCategory(kategori.kategori_id)}
@@ -146,27 +147,18 @@ export default function AdminTools() {
           ))}
         </div>
 
-        {/* <Button
+        <Button
           className="text-white bg-blue-500 hover:bg-blue-600 p-3"
           onClick={getAllTools}
         >
           Semua Alat
-        </Button> */}
-
-        <div>
-          {tools.map((tool, index) => (
-            <div key={index}>
-              <h3>{tool.kategori_nama}</h3>
-              <p>{tool.deskripsi}</p>
-            </div>
-          ))}
-        </div>
+        </Button>
       </div>
       {/* sampai sini */}
 
       <div className="flex justify-between gap-4 pt-2 p-8">
         <Button
-        name="Alat"
+          name="Alat"
           className="flex items-center gap-2 text-white bg-[#2C3930]/80"
           onClick={() => setIsAddModalOpen(true)}
           radius="lg"
@@ -209,7 +201,7 @@ export default function AdminTools() {
               <div className="flex items-center justify-between">
                 <Link href={`/alat/detail/${tool.alat_id}`} passHref>
                   <Button
-                  id="detail"
+                    id="detail"
                     className="text-tiny text-black bg-[#626F47]/60 mr-1"
                     radius="sm"
                     size="sm"
@@ -244,7 +236,7 @@ export default function AdminTools() {
           <ModalBody>
             <p>Nama Alat</p>
             <input
-            name="nama"
+              name="nama"
               className="border p-2"
               placeholder="Masukkan Nama Alat"
               value={alatNama}
@@ -252,7 +244,7 @@ export default function AdminTools() {
             />
             <p>Deskripsi Alat</p>
             <input
-            name="deskripsi"
+              name="deskripsi"
               className="border p-2"
               placeholder="Masukkan Deskripsi Alat"
               value={deskripsi}
@@ -260,7 +252,7 @@ export default function AdminTools() {
             />
             <p>Harga per Hari</p>
             <input
-            name="harga"
+              name="harga"
               className="border p-2"
               placeholder="Masukkan Harga per Hari"
               value={hargaPerHari}
@@ -268,7 +260,7 @@ export default function AdminTools() {
             />
             <p>Stok</p>
             <input
-            name="stok"
+              name="stok"
               className="border p-2"
               placeholder="Masukkan Jumlah Stok"
               value={stok}
@@ -276,7 +268,7 @@ export default function AdminTools() {
             />
             <p>Kategori ID</p>
             <input
-            name="kategori"
+              name="kategori"
               className="border p-2"
               placeholder="Masukkan Kategori ID"
               value={kategoriId}

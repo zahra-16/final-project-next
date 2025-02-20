@@ -14,9 +14,20 @@ interface Alat {
   alat_kategori_id: number;
 }
 
+// src/dataservices/alat/type.ts
+export interface AlatData {
+  alat_id: number;
+  alat_nama: string;
+  alat_deskripsi: string;
+  alat_hargaperhari: number;
+  alat_stok: number;
+  alat_kategori_id: number;
+  gambar_utama: string; // Add this line
+}
+
 export default function HomePage() {
   const scrollRef = useRef(null);
-  const [alatData, setAlatData] = useState<Alat[]>([]);
+  const [alatData, setAlatData] = useState<AlatData[]>([]);
   const [loading, setLoading] = useState(true);
   const [formData, setformData] = useState<Alat>({
     alat_nama: "",
@@ -63,7 +74,11 @@ export default function HomePage() {
       throw new Error("This is a simulated error!");
     } catch (error) {
       console.error("Caught error:", error);
-      alert("Terjadi kesalahan: " + error.message);
+      if (error instanceof Error) {
+        alert("Terjadi kesalahan: " + error.message);
+      } else {
+        alert("Terjadi kesalahan yang tidak diketahui");
+      }
     }
   };
 
