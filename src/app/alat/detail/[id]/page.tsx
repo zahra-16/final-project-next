@@ -13,7 +13,7 @@ import { Plus, Trash2 } from "lucide-react";
 import axios from "axios"; // Jangan lupa import axios!
 import { Params } from "next/dist/server/request/params";
 
-const DetailPage = ({ params }: { params: Params }) => {
+const DetailPage = () => {
   const [alat, setAlat] = useState<AlatOne | null>(null);
   const { id } = useParams();
   const router = useRouter();
