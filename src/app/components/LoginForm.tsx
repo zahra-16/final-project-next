@@ -88,8 +88,9 @@ export default function LoginForm() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-white">
-            <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-white" 
+        style={{ backgroundImage: "url('/loginbackground.jpg')", backgroundSize: "cover" }} >
+            <div className="bg-white/85 p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
                 <h2 className="text-xl font-semibold text-gray-700">Sign in with username</h2>
                 <p className="text-gray-500 text-sm mb-4">Enter your username and password to continue.</p>
                 {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -119,7 +120,7 @@ export default function LoginForm() {
                     </a>
                     <button 
                         type="submit" 
-                        className={`w-full p-3 rounded-lg hover:bg-gray-800 transition ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-black text-white"}`}
+                        className={`w-full p-3 rounded-lg hover:bg-[#DCD7C9] hover:text-black hover:border-2 hover:border-[#3F4F44] transition ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#3F4F44] text-white"}`}
                         disabled={loading}
                     >
                         {loading ? "Signing in..." : "Sign In"}

@@ -69,7 +69,8 @@ export default function RegisterForm() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-white">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-white"
+        style={{ backgroundImage: "url('/loginbackground.jpg')", backgroundSize: "cover" }}>
             <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
                 <h2 className="text-xl font-semibold text-gray-700">Create an Account</h2>
                 <p className="text-gray-500 text-sm mb-4">Enter your details to create a new account.</p>
@@ -109,7 +110,7 @@ export default function RegisterForm() {
                     />
                     <button 
                         type="submit" 
-                        className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-800 transition"
+                       className={`w-full p-3 rounded-lg hover:bg-[#DCD7C9] hover:text-black hover:border-2 hover:border-[#3F4F44] text-white bg-[#3F4F44]`}
                         disabled={loading}
                     >
                         {loading ? "Registering..." : "Register"}

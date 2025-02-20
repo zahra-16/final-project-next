@@ -137,15 +137,15 @@ export default function HomePage() {
       {/* Hero Section */}
       <div
         className="relative w-full h-[400px] text-black opacity-90 flex flex-col items-center justify-center text-center p-6 rounded-xl shadow-xl bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: "url('/background-mountain.jpg')" }}
+        style={{ backgroundImage: "url('/mountainback.jpg')" }}
       >
-        <h1 className="text-4xl font-bold mb-2 text-black">
+        <h1 className="text-4xl font-bold mb-2 text-white">
           Sewa Barang Mudah & Cepat
         </h1>
-        <p className="text-lg mb-4 text-black">
+        <p className="text-lg mb-4 text-white">
           Temukan berbagai barang untuk disewa sesuai kebutuhan Anda!
         </p>
-        <button className="bg-[#A27B5C] text-white px-6 py-2 rounded-full shadow-lg hover:bg-[#DCD7C9] hover:text-black transition-all">
+        <button className="bg-[#A27B5C] text-black px-6 py-2 rounded-full shadow-lg hover:bg-[#543A14] hover:text-white transition-all">
           Mulai Sewa Sekarang
         </button>
       </div>
