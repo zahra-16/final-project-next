@@ -651,11 +651,9 @@ export default function Penyewaan() {
             <p>
               <strong>Harga Per Hari:</strong> {DetailData.alat_hargaperhari}
             </p>
-            <button id="close" onClick={handleCloseDetailModal}>
-              Close
-            </button>
+            
           </ModalBody>
-          <ModalFooter></ModalFooter>
+          <ModalFooter><button id="close" onClick={handleCloseDetailModal} className="rounded-md bg-[#A27B5C] hover:bg-[#C2B8A3] mr-4 p-2 px-9 ">Close</button></ModalFooter>
         </ModalContent>
       </Modal>
     </div>
